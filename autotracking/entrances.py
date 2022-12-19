@@ -87,7 +87,7 @@ def loadEntrances(gb):
         entrancesByTarget[info.target] = entrance
         entrancesByName[name] = entrance
     
-    romData = gb.emulator.read_rom(0, 1024 * 1024)
+    romData = gb.read_rom(0, 1024 * 1024)
 
     # Super janky, I need to make an LADXR pull request
     with open('rom', 'wb') as file:

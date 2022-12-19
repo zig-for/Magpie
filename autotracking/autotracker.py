@@ -1,12 +1,13 @@
 import asyncio
 import websockets
 import time
-from gameboy import Gameboy
+from gameboy import EvilGameboy, RetroGameboy
 from items import *
 from checks import *
 from entrances import *
 
-gb = Gameboy()
+# gb = Gameboy()
+gb = RetroGameboy()
 
 async def processMessages(socket):
     handshook = False
@@ -39,8 +40,8 @@ async def socketLoop(socket, path):
         if not gb.findEmulator():
             continue
 
-        if not handshook:
-            loadEntrances(gb)
+        #if not handshook:
+        #    loadEntrances(gb)
 
         extraItems = {}
 
